@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kayan Dental Lab | Price List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  :root{
+    --navy-deep:#0C1B20;
+    --navy-mid:#152F35;
+    --navy-soft:#1B3A41;
+    --porcelain:#F3EFE6;
+    --porcelain-dim:#B9C4C2;
+    --gold:#B99B6B;
+    --gold-bright:#D9C097;
+    --teal:#6FB8AE;
+    --teal-glow: rgba(111,184,174,.25);
+    --ink:#0F2226;
+    --line: rgba(243,239,230,.10);
+    --maxw: 1000px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--navy-deep);
+    color:var(--porcelain);
+    font-family:'Tajawal',sans-serif;
+    line-height:1.7;
+    min-height:100vh;
+  }
+  h1,h2,h3,.brand,.cat-title{font-family:'Cairo',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+  }
+
+  /* ================= SPLASH ================= */
+  #splash{
+    position:fixed;inset:0;z-index:100;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;
+    background:
+      radial-gradient(ellipse at 70% 25%, rgba(111,184,174,.13), transparent 55%),
+      radial-gradient(ellipse at 20% 80%, rgba(185,155,107,.10), transparent 50%),
+      var(--navy-deep);
+    transition:opacity .8s ease, visibility .8s ease;
+  }
+  #splash.hide{opacity:0;visibility:hidden;pointer-events:none;}
+  .splash-visual{position:relative;width:180px;height:210px;display:flex;align-items:center;justify-content:center;}
+  .scan-ring{position:absolute;width:220px;height:220px;border-radius:50%;border:1px dashed rgba(111,184,174,.22);animation:spin 20s linear infinite;}
+  .scan-ring.r2{width:260px;height:260px;border-color:rgba(185,155,107,.16);animation-duration:28s;animation-direction:reverse;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .tooth-glow{position:absolute;width:150px;height:150px;background:radial-gradient(circle, var(--teal-glow), transparent 70%);filter:blur(8px);animation:breathe 3.5s ease-in-out infinite;}
+  @keyframes breathe{0%,100%{transform:scale(1);opacity:.7;}50%{transform:scale(1.15);opacity:1;}}
+  .tooth-svg{position:relative;z-index:3;width:120px;filter:drop-shadow(0 14px 26px rgba(0,0,0,.5));}
+  .tooth-path{fill:none;stroke:var(--porcelain);stroke-width:2.4;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 1.8s ease forwards .1s;}
+  .tooth-fill{fill:url(#toothGrad);opacity:0;animation:fillIn .8s ease forwards 1.5s;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @keyframes fillIn{to{opacity:1;}}
+  .scan-line{position:absolute;left:22%;right:22%;height:2px;background:linear-gradient(90deg,transparent,var(--teal),transparent);
+    box-shadow:0 0 16px 2px var(--teal-glow); animation:scanMove 1.9s ease-in-out infinite;z-index:4;}
+  @keyframes scanMove{0%{top:10%;opacity:0;}10%{opacity:1;}50%{top:88%;}90%{opacity:1;}100%{top:10%;opacity:0;}}
+  .splash-brand{font-weight:900;font-size:1.7rem;letter-spacing:.5px;opacity:0;animation:fadeUp .7s 1.6s forwards;}
+  .splash-brand span{color:var(--gold-bright);}
+  .splash-sub{color:var(--porcelain-dim);font-size:.92rem;letter-spacing:1px;opacity:0;animation:fadeUp .7s 1.85s forwards;}
+  .splash-btn{
+    margin-top:6px;background:var(--gold);color:var(--ink);padding:13px 34px;border-radius:30px;font-weight:800;
+    font-family:'Cairo',sans-serif;font-size:.95rem;border:none;cursor:pointer;
+    opacity:0;animation:fadeUp .7s 2.1s forwards;transition:transform .3s,box-shadow .3s;
+  }
+  .splash-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(185,155,107,.28);}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+  /* ================= PRICE PAGE ================= */
+  #price-page{opacity:0;transition:opacity .8s ease;}
+  #price-page.show{opacity:1;}
+
+  header.top{
+    padding:36px 0 26px;border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg, rgba(111,184,174,.05), transparent);
+  }
+  .top-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .brand{font-weight:800;font-size:1.3rem;display:flex;align-items:center;gap:10px;}
+  .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal);}
+  .brand span{color:var(--gold-bright);}
+  .page-title{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;margin-top:18px;}
+  .page-sub{color:var(--porcelain-dim);margin-top:8px;font-size:.95rem;}
+
+  .contact-strip{
+    display:flex;flex-wrap:wrap;gap:14px;margin-top:22px;
+  }
+  .contact-btn{
+    display:flex;align-items:center;gap:10px;background:var(--navy-soft);border:1px solid var(--line);
+    padding:11px 18px;border-radius:12px;font-size:.92rem;transition:.3s;
+  }
+  .contact-btn:hover{border-color:var(--teal);background:rgba(111,184,174,.07);}
+  .contact-btn .ic{color:var(--teal);}
+
+  main{padding:44px 0 80px;}
+  .category{margin-bottom:56px;}
+  .cat-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:14px;}
+  .cat-title{font-size:1.35rem;font-weight:800;color:var(--porcelain);}
+  .cat-note{color:var(--porcelain-dim);font-size:.82rem;}
+
+  table{width:100%;border-collapse:collapse;}
+  thead th{
+    text-align:right;font-family:'Cairo',sans-serif;font-size:.82rem;letter-spacing:.5px;
+    color:var(--gold-bright);padding:10px 12px;border-bottom:1px solid var(--line);font-weight:700;
+  }
+  thead th.num{text-align:center;}
+  tbody td{padding:14px 12px;border-bottom:1px solid var(--line);font-size:.95rem;}
+  tbody td.num{text-align:center;font-family:'Cairo',sans-serif;font-weight:700;color:var(--porcelain);white-space:nowrap;}
+  tbody tr{transition:background .25s;}
+  tbody tr:hover{background:rgba(111,184,174,.05);}
+  .item-name{font-weight:600;color:var(--porcelain);}
+  .item-type{color:var(--porcelain-dim);font-size:.82rem;margin-top:2px;}
+
+  .note-box{
+    margin-top:10px;color:var(--porcelain-dim);font-size:.85rem;background:rgba(185,155,107,.06);
+    border:1px solid rgba(185,155,107,.16);padding:14px 18px;border-radius:10px;
+  }
+
+  .whatsapp-section{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:0;border:1px solid var(--line);border-radius:20px;
+    overflow:hidden;background:var(--navy-soft);margin-top:20px;
+  }
+  .wa-info{padding:40px;}
+  .wa-info h3{font-size:1.4rem;margin-bottom:10px;}
+  .wa-info p{color:var(--porcelain-dim);font-size:.92rem;max-width:380px;margin-bottom:20px;}
+  .wa-numbers{display:flex;flex-direction:column;gap:12px;}
+  .wa-numbers a{
+    display:flex;align-items:center;gap:10px;background:rgba(111,184,174,.08);border:1px solid rgba(111,184,174,.22);
+    padding:10px 16px;border-radius:10px;font-weight:600;font-size:.92rem;width:fit-content;transition:.3s;
+  }
+  .wa-numbers a:hover{background:rgba(111,184,174,.16);}
+  .qr-box{background:var(--porcelain);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:36px;}
+  #qrcode{display:flex;align-items:center;justify-content:center;}
+  .qr-box h4{font-family:'Cairo',sans-serif;font-weight:800;font-size:.95rem;}
+  .qr-box p{font-size:.8rem;color:#444;text-align:center;max-width:200px;}
+
+  footer{padding:30px 0;text-align:center;color:var(--porcelain-dim);font-size:.85rem;border-top:1px solid var(--line);}
+
+  @media (max-width:720px){
+    .whatsapp-section{grid-template-columns:1fr;}
+    table, thead, tbody, th, td, tr{display:block;}
+    thead{display:none;}
+    tbody tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:12px 14px;}
+    tbody td{border:none;padding:6px 0;display:flex;justify-content:space-between;align-items:center;}
+    tbody td.num::before{content:attr(data-label);color:var(--porcelain-dim);font-size:.78rem;font-family:'Tajawal',sans-serif;font-weight:400;}
+    tbody td:first-child{display:block;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= SPLASH ================= -->
+<div id="splash">
+  <div class="splash-visual">
+    <div class="scan-ring"></div>
+    <div class="scan-ring r2"></div>
+    <div class="tooth-glow"></div>
+    <svg class="tooth-svg" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="toothGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F3EFE6"/>
+          <stop offset="100%" stop-color="#B9C4C2"/>
+        </linearGradient>
+      </defs>
+      <path class="tooth-fill" d="M100 15c-28 0-46 16-52 40-5 21 2 34 8 52 5 16 6 34 14 55 5 13 12 22 20 22s12-13 16-28c3-12 5-12 8 0 4 15 8 28 16 28s15-9 20-22c8-21 9-39 14-55 6-18 13-31 8-52-6-24-24-40-52-40z"/>
+      <path class="tooth-path" d="M100 15c-28 0-46 16-52 40-5 21 2 34 8 52 5 16 6 34 14 55 5 13 12 22 20 22s12-13 16-28c3-12 5-12 8 0 4 15 8 28 16 28s15-9 20-22c8-21 9-39 14-55 6-18 13-31 8-52-6-24-24-40-52-40z"/>
+    </svg>
+    <div class="scan-line"></div>
+  </div>
+  <div class="splash-brand">Kayan<span> Dental Lab</span></div>
+  <div class="splash-sub">Price List — قائمة الأسعار</div>
+  <button class="splash-btn" onclick="enterSite()">عرض الأسعار</button>
+</div>
+
+<!-- ================= PRICE PAGE ================= -->
+<div id="price-page">
+  <header class="top">
+    <div class="wrap">
+      <div class="top-row">
+        <div class="brand"><span class="dot"></span>Kayan<span> Dental Lab</span></div>
+      </div>
+      <h1 class="page-title">قائمة أسعار التركيبات</h1>
+      <p class="page-sub">الأسعار تقريبية وقابلة للتعديل حسب الحالة والمقاس والخامة المستخدمة — للتأكيد يُرجى التواصل مباشرة.</p>
+      <div class="contact-strip">
+        <a class="contact-btn" href="tel:01020584636"><span class="ic">📞</span> 01020584636</a>
+        <a class="contact-btn" href="tel:01030808296"><span class="ic">📞</span> 01030808296</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ZIRCONIUM -->
+    <div class="category">
+      <div class="cat-head">
+        <div class="cat-title">Zirconium</div>
+        <div class="cat-note">السعر للسن الواحد</div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>النوع</th><th class="num">Price </th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="item-name">Zirconia Zolid</div><div class="item-type"></div></td>
+            <td class="num" data-label="السعر">550 EGP</td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Zirconia Multilayer</div><div class="item-type">متعدد الطبقات باللون</div></td>
+            <td class="num" data-label="السعر">650 EGP</td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Zirconia on Implant</div><div class="item-type">زرعة</div></td>
+            <td class="num" data-label="السعر">700 EGP</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PFM -->
+    <div class="category">
+      <div class="cat-head">
+        <div class="cat-title">PFM — بورسلين على معدن (كل الأنواع)</div>
+        <div class="cat-note">السعر للسن الواحد</div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>النوع</th><th class="num">السعر للسن</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="item-name">PFM </div><div class="item-type"> Turkey  </div></td>
+            <td class="num" data-label="السعر">250 EGP</td>
+          </tr>
+          <tr>
+            <td><div class="item-name">PFM</div><div class="item-type"> Vita </div></td>
+            <td class="num" data-label="السعر">300 EGP</td>
+          </tr>
+          <tr>
+            <td><div class="item-name">PFM on Implant</div><div class="item-type"> زرعة</div></td>
+            <td class="num" data-label="السعر">350 EGP</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PARTIAL -->
+    <div class="category">
+      <div class="cat-head">
+        <div class="cat-title">Partial Denture — أطقم جزئية (Soft / Hard)</div>
+        <div class="cat-note">للسن الواحد أو للطقم الكامل</div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>النوع</th><th class="num">للسن</th><th class="num">للطقم الكامل</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="item-name">Soft Partial</div><div class="item-type">فاليبلاست / مرن</div></td>
+            <td class="num" data-label="للسن">300 EGP</td>
+            <td class="num" data-label="للطقم">1500 EGP</td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Hard Partial</div><div class="item-type">هيكل كوبالت كروم</div></td>
+            <td class="num" data-label="للسن">150 EGP</td>
+            <td class="num" data-label="للطقم">750 EGP</td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Combination Partial</div><div class="item-type">سوفت + هارد</div></td>
+            <td class="num" data-label="للسن">200 EGP</td>
+            <td class="num" data-label="للطقم">500 EGP</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FULL DENTURE -->
+    <div class="category">
+      <div class="cat-head">
+        <div class="cat-title">Full Denture — طقم كامل</div>
+        <div class="cat-note">السعر للطقم الكامل Upper - Lower </div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>النوع</th><th class="num">السعر</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="item-name">Acrylic Full Denture</div><div class="item-type">أكريليك عادي</div></td>
+            <td class="num" data-label="السعر">1500 EGP</td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Acrylic Full Denture Soft </div><div class="item-type">أسنان استيراد</div></td>
+            <td class="num" data-label="السعر">3000 EGP</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- WHATSAPP -->
+    <div class="whatsapp-section">
+      <div class="wa-info">
+        <h3>للطلب والاستفسار</h3>
+        <p>كلمنا واتساب على طول من الرقم اللي يناسبك، أو امسح الكود بجانب.</p>
+        <div class="wa-numbers">
+          <a href="https://wa.me/201020584636" target="_blank">💬 واتساب — 01020584636</a>
+          <a href="https://wa.me/201030808296" target="_blank">💬 واتساب — 01030808296</a>
+        </div>
+      </div>
+      <div class="qr-box">
+        <div id="qrcode"></div>
+        <h4>QR Code WhatsApp</h4>
+       
+      </div>
+    </div>
+
+  </main>
+
+  <footer>© 2026 Kayan Dental Lab — كل الحقوق محفوظة</footer>
+</div>
+
+<script>
+  function enterSite(){
+    document.getElementById('splash').classList.add('hide');
+    document.getElementById('price-page').classList.add('show');
+  }
+  // auto-advance after animation plays, if user doesn't click
+  setTimeout(enterSite, 3600);
+
+  // build whatsapp QR
+  new QRCode(document.getElementById("qrcode"), {
+    text: "https://wa.me/201020584636",
+    width: 130,
+    height: 130,
+    colorDark: "#0F2226",
+    colorLight: "#F3EFE6",
+    correctLevel: QRCode.CorrectLevel.M
+  });
+</script>
+
+</body>
+</html>
