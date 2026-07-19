@@ -99,6 +99,16 @@
   .contact-btn:hover{border-color:var(--teal);background:rgba(111,184,174,.07);}
   .contact-btn .ic{color:var(--teal);}
 
+  .branches-strip{
+    display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;
+  }
+  .branch-chip{
+    display:flex;align-items:center;gap:8px;background:rgba(185,155,107,.07);border:1px solid rgba(185,155,107,.20);
+    padding:9px 16px;border-radius:20px;font-size:.85rem;color:var(--porcelain-dim);
+  }
+  .branch-chip .ic{color:var(--gold-bright);}
+  .branch-chip b{color:var(--porcelain);font-weight:600;}
+
   main{padding:44px 0 80px;}
   .category{margin-bottom:56px;}
   .cat-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:14px;}
@@ -188,8 +198,14 @@
       </div>
       <h1 class="page-title">قائمة أسعار التركيبات</h1>
       <div class="contact-strip">
-      
-        <a class="contact-btn" href="tel:01030808296"><span class="ic">📞</span> 01030808296</a>
+        <a class="contact-btn" href="tel:01026174966"><span class="ic">📞</span> 01026174966</a>
+         <a class="contact-btn" href="tel:01030808296"><span class="ic">📞</span> 01030808296</a>
+      </div>
+      <div class="branches-strip">
+        <div class="branch-chip"><span class="ic">📍</span> <b>الإسكندرية</b></div>
+        <div class="branch-chip"><span class="ic">📍</span> <b>مدينة نصر</b></div>
+        <div class="branch-chip"><span class="ic">📍</span> <b>طنطا</b></div>
+        <div class="branch-chip"><span class="ic">📍</span> <b>منوف</b></div>
       </div>
     </div>
   </header>
@@ -213,14 +229,14 @@
           </tr>
           <tr>
             <td><div class="item-name">Zirconia Zolid</div><div class="item-type"></div></td>
-            <td class="num" data-label="السعر">600 EGP</td>
+            <td class="num" data-label="السعر">850 EGP</td>
           </tr>
           <tr>
             <td><div class="item-name">Zirconia Multilayer</div><div class="item-type">متعدد الطبقات باللون</div></td>
             <td class="num" data-label="السعر">650 EGP</td>
           </tr>
           <tr>
-            <td><div class="item-name">Zirconia on Implant</div><div class="item-type">زرعة</div></td>
+            <td><div class="item-name">Zirconia on Implant - screw retained </div><div class="item-type">زرعة</div></td>
             <td class="num" data-label="السعر">700 EGP</td>
           </tr>
         </tbody>
@@ -240,14 +256,18 @@
         <tbody>
           <tr>
             <td><div class="item-name">PFM </div><div class="item-type"> Turkey  </div></td>
-            <td class="num" data-label="السعر">250 EGP</td>
+            <td class="num" data-label="السعر">200 EGP</td>
           </tr>
           <tr>
             <td><div class="item-name">PFM</div><div class="item-type"> Vita </div></td>
-            <td class="num" data-label="السعر">300 EGP</td>
+            <td class="num" data-label="السعر">250 EGP</td>
           </tr>
            <tr>
             <td><div class="item-name">PFM</div><div class="item-type"> Vita VM30 </div></td>
+            <td class="num" data-label="السعر">250 EGP</td>
+          </tr>
+           <tr>
+            <td><div class="item-name">PFM USA </div><div class="item-type"> Vita VM30 </div></td>
             <td class="num" data-label="السعر">300 EGP</td>
           </tr>
           <tr>
@@ -261,7 +281,7 @@
     <!-- PARTIAL -->
     <div class="category">
       <div class="cat-head">
-        <div class="cat-title">Partial Denture — أطقم جزئية (Soft / Hard)</div>
+        <div class="cat-title">Partial Denture — أطقم جزئية (Flexible / Hard)</div>
         <div class="cat-note">للسن الواحد أو للطقم الكامل</div>
       </div>
       <table>
@@ -270,41 +290,20 @@
         </thead>
         <tbody>
           <tr>
-            <td><div class="item-name">Soft Partial</div><div class="item-type"></div></td>
-            <td class="num" data-label="للسن">300 EGP</td>
-            <td class="num" data-label="للطقم">1500 EGP</td>
+            <td><div class="item-name"> Flexible - RBD</div><div class="item-type"></div></td>
+            <td class="num" data-label="للسن">350 EGP</td>
+            <td class="num" data-label="للطقم">3000 EGP</td>
           </tr>
           <tr>
-            <td><div class="item-name">Hard Partial</div><div class="item-type"></div></td>
-            <td class="num" data-label="للسن">150 EGP</td>
-            <td class="num" data-label="للطقم">750 EGP</td>
+            <td><div class="item-name">Acrylic Partial</div><div class="item-type"></div></td>
+            <td class="num" data-label="للسن">180 EGP</td>
+            <td class="num" data-label="للطقم">1800 EGP</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- FULL DENTURE -->
-    <div class="category">
-      <div class="cat-head">
-        <div class="cat-title">Full Denture — طقم كامل</div>
-        <div class="cat-note">السعر للطقم الكامل Upper - Lower </div>
-      </div>
-      <table>
-        <thead>
-          <tr><th>النوع</th><th class="num">السعر</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><div class="item-name">Acrylic Full Denture</div><div class="item-type">أكريليك عادي</div></td>
-            <td class="num" data-label="السعر">1500 EGP</td>
-          </tr>
-          <tr>
-            <td><div class="item-name">Acrylic Full Denture Soft </div><div class="item-type">أسنان استيراد</div></td>
-            <td class="num" data-label="السعر">3000 EGP</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+   
 
     <!-- WHATSAPP -->
     <div class="whatsapp-section">
@@ -312,8 +311,8 @@
         <h3>للطلب والاستفسار</h3>
         <p>كلمنا واتساب على طول من الرقم اللي يناسبك، أو امسح الكود بجانب.</p>
         <div class="wa-numbers">
-          <a href="https://wa.me/201020584636" target="_blank">    💬 واتساب — 01020584636 </a>
-          <a href="https://wa.me/201030808296" target="_blank">📞  واتساب — 01030808296 </a>
+          <a href="https://wa.me/201026174966" target="_blank">   💬 واتساب — 01026174966 </a>
+          <a href="https://wa.me/201030808296" target="_blank"> 💬  واتساب — 01030808296 </a>
         </div>
       </div>
       <div class="qr-box">
